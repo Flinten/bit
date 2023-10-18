@@ -1,0 +1,15 @@
+name: Bit export
+on:
+  pull_request:
+    types:
+      - closed
+jobs:
+#    Bit-export:
+#      uses: ./.github/workflows/tag-export.yml  
+#      secrets:
+#        BIT_CONFIG_USER_TOKEN: ${{ secrets.BIT_CONFIG_USER_TOKEN }}
+    Bit-commit-bitmap:
+#      needs: Bit-export
+      uses: ./.github/workflows/commit-bitmap.yml  
+      secrets:
+        BIT_CONFIG_USER_TOKEN: ${{ secrets.BIT_CONFIG_USER_TOKEN }}        
