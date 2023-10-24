@@ -2,6 +2,6 @@ import { Button } from './button';
 
 export const BasicButton = () => {
   return (
-    <Button>hello world6</Button>
+    <Button>Casper is nice</Button>
   );
 }
