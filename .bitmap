@@ -11,18 +11,17 @@
 {
     "ui/button": {
         "name": "ui/button",
-        "scope": "flinten.test",
-        "version": "4dde32f4e5b0240a706db9f4a0d4c154610e0a22",
+        "scope": "",
+        "version": "",
+        "defaultScope": "flinten.test",
         "mainFile": "index.ts",
         "rootDir": "my-scope/ui/button",
-        "isAvailableOnCurrentLane": false
+        "config": {
+            "teambit.react/react-env@1.0.16": {},
+            "teambit.envs/envs": {
+                "env": "teambit.react/react-env"
+            }
+        }
     },
-    "$schema-version": "17.0.0",
-    "_bit_lane": {
-        "id": {
-            "name": "test1",
-            "scope": "flinten.test"
-        },
-        "exported": false
-    }
+    "$schema-version": "17.0.0"
 }

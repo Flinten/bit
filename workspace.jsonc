@@ -27,7 +27,7 @@
     /**
      * default scope for all components in workspace.
      **/
-    "defaultScope": "flinten.test",
+    "defaultScope": "my-scope",
     "resolveAspectsFromNodeModules": true,
     "resolveEnvsFromRoots": true
   },
