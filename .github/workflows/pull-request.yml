@@ -21,6 +21,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Initialize Bit
-        uses: bit-tasks/init@v1 
+        uses: bit-tasks/init@v1
+      - name: Bit Verify
+        uses: bit-tasks/verify@v1
+      - name: Bit Lane Cleanup
+        uses: bit-tasks/lane-cleanup@v1                 
       - name: Bit Pull Request
         uses: bit-tasks/pull-request@v1
+      - name: Bit Tag and Export
+        uses: bit-tasks/tag-export@v1
+      - name: Commit Bitmap
+        uses: bit-tasks/commit-bitmap@v1                
