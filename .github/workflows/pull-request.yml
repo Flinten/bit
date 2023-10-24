@@ -30,7 +30,10 @@ jobs:
       - name: Bit Verify
         uses: bit-tasks/verify@v1
       - name: Bit Lane Cleanup
-        uses: bit-tasks/lane-cleanup@v1                 
+        uses: bit-tasks/lane-cleanup@v1
+      - name: delete lane
+        run: |
+          bit lane remove flinten.latest/pr-1 --remote                   
       - name: Bit Pull Request
         uses: bit-tasks/pull-request@v1
       - name: Bit Tag and Export
