@@ -35,7 +35,7 @@ jobs:
         run: |
           bit status --json
           bit status --strict
-          bit lane create pr-1
+          bit lane create pr-2
           bit snap -m first try --build
           bit export
 #          bit lane remove flinten.latest/pr-1 --remote --silent --force
