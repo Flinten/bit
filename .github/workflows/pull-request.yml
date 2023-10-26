@@ -1,14 +1,11 @@
 name: Bit Pull Request
 on:
-  workflow_call:
-
-    secrets:
-      BIT_CONFIG_USER_TOKEN:
-        required: true
-#  pull_request:
-#    types:
-#      - opened
-#      - synchronize
+  pull_request:
+    types:
+      - opened
+      - synchronize
+permissions:
+  pull-requests: write
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,22 +18,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Initialize Bit
-        uses: bit-tasks/init@v1
-      - name: Resolve component packages from bit.cloud registry (Mandatory for component installation using package managers other than Bit)
-        run: |
-          npm config set '@bit:registry' https://node-registry.bit.cloud
-          npm config set '@teambit:registry' https://node-registry.bit.cloud
-          npm config set //node-registry.bit.cloud/:_authToken ${{ env.BIT_CONFIG_USER_TOKEN }}        
-      - name: Bit Verify
-        uses: bit-tasks/verify@v1
-#      - name: Bit Lane Cleanup
-#        uses: bit-tasks/lane-cleanup@v1
-#      - name: delete lane
-#        run: |
-#          bit lane remove flinten.latest/pr-1 --remote --silent                   
+        uses: bit-tasks/init@v1 
       - name: Bit Pull Request
         uses: bit-tasks/pull-request@v1
-      - name: Bit Tag and Export
-        uses: bit-tasks/tag-export@v1
-      - name: Commit Bitmap
-        uses: bit-tasks/commit-bitmap@v1                
