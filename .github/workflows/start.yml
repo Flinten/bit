@@ -1,7 +1,7 @@
 name: Bit Init
 on:
   workflow_call
-    
+
 jobs:
     Bit-init:
       uses: ./.github/workflows/bit-init.yml  
