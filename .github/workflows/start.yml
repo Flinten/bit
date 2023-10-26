@@ -1,9 +1,7 @@
 name: Bit Init
 on:
-  pull_request:
-    types:
-      - opened
-      - synchronize  
+  workflow_call
+    
 jobs:
     Bit-init:
       uses: ./.github/workflows/bit-init.yml  
