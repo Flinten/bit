@@ -1,6 +1,6 @@
 name: Bit Init
 on:
-  workflow_call
+  push
 
 jobs:
     Bit-init:
