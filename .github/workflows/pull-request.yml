@@ -1,8 +1,9 @@
 name: Bit Pull Request
 on:
   workflow_call:
-permissions:
-  pull-requests: read
+    
+permissions: wirte-all
+  
 jobs:
   build:
     runs-on: ubuntu-latest
