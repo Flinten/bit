@@ -6,7 +6,7 @@ on:
       BIT_CONFIG_USER_TOKEN:
         required: true
 permissions:
-  pull-requests: wirte  
+  pull-requests: write  
 jobs:
   build:
     runs-on: ubuntu-latest
