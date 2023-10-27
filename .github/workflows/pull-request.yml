@@ -5,8 +5,7 @@ on:
     secrets:
       BIT_CONFIG_USER_TOKEN:
         required: true
-permissions:
-  pull-requests: write  
+ 
 jobs:
   build:
     runs-on: ubuntu-latest
