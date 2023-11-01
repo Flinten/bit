@@ -1,22 +1,26 @@
 name: Bit Init
 on:
-  push
+  pull_request
 
 jobs:
-    Bit-init:
-      uses: ./.github/workflows/bit-init.yml  
-      secrets:
-        BIT_CONFIG_USER_TOKEN: ${{ secrets.BIT_CONFIG_USER_TOKEN }}
-    Bit-verify:
-      needs: Bit-init  
-      uses: ./.github/workflows/verify.yml  
-      secrets:
-        BIT_CONFIG_USER_TOKEN: ${{ secrets.BIT_CONFIG_USER_TOKEN }}        
-    Bit-pull-request:
-      needs: Bit-verify  
-      uses: ./.github/workflows/pull-request.yml  
-      secrets:
-        BIT_CONFIG_USER_TOKEN: ${{ secrets.BIT_CONFIG_USER_TOKEN }}  
+  Upload-pr-number:
+    uses: ./.github/workflows/upload.yml
+  Use--pr-number:
+    uses: ./.github/workflows/use-data.yml    
+  Bit-init:
+    uses: ./.github/workflows/bit-init.yml  
+    secrets:
+      BIT_CONFIG_USER_TOKEN: ${{ secrets.BIT_CONFIG_USER_TOKEN }}
+  Bit-verify:
+    needs: Bit-init  
+    uses: ./.github/workflows/verify.yml  
+    secrets:
+      BIT_CONFIG_USER_TOKEN: ${{ secrets.BIT_CONFIG_USER_TOKEN }}        
+  Bit-pull-request:
+    needs: Bit-verify  
+    uses: ./.github/workflows/pull-request.yml  
+    secrets:
+      BIT_CONFIG_USER_TOKEN: ${{ secrets.BIT_CONFIG_USER_TOKEN }}  
 #    Own-pull-request:
 #      needs: Bit-verify  
 #      uses: ./.github/workflows/own-workflow.yml  
