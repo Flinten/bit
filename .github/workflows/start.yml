@@ -3,20 +3,32 @@ on:
   push
 
 jobs:
-    Bit-init:
-      uses: ./.github/workflows/bit-init.yml  
-      secrets:
-        BIT_CONFIG_USER_TOKEN: ${{ secrets.BIT_CONFIG_USER_TOKEN }}
-    Bit-verify:
-      needs: Bit-init  
-      uses: ./.github/workflows/verify.yml  
-      secrets:
-        BIT_CONFIG_USER_TOKEN: ${{ secrets.BIT_CONFIG_USER_TOKEN }}        
-    Bit-pull-request:
-      needs: Bit-verify  
-      uses: ./.github/workflows/pull-request.yml  
-      secrets:
-        BIT_CONFIG_USER_TOKEN: ${{ secrets.BIT_CONFIG_USER_TOKEN }}  
+  build:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GIT_USER_NAME: ${{ secrets.GIT_USER_NAME }}
+      GIT_USER_EMAIL: ${{ secrets.GIT_USER_EMAIL }}
+      BIT_CONFIG_USER_TOKEN: ${{ secrets.BIT_CONFIG_USER_TOKEN }}
+      PR_NUMBER: ${{ github.event.number }}
+    steps:
+      - name: get-pr
+        run: |
+          echo "$GITHUB_PR_NUMBER"  
+  Bit-init:
+    uses: ./.github/workflows/bit-init.yml  
+    secrets:
+      BIT_CONFIG_USER_TOKEN: ${{ secrets.BIT_CONFIG_USER_TOKEN }}
+  Bit-verify:
+    needs: Bit-init  
+    uses: ./.github/workflows/verify.yml  
+    secrets:
+      BIT_CONFIG_USER_TOKEN: ${{ secrets.BIT_CONFIG_USER_TOKEN }}        
+  Bit-pull-request:
+    needs: Bit-verify  
+    uses: ./.github/workflows/pull-request.yml  
+    secrets:
+      BIT_CONFIG_USER_TOKEN: ${{ secrets.BIT_CONFIG_USER_TOKEN }}  
 #    Own-pull-request:
 #      needs: Bit-verify  
 #      uses: ./.github/workflows/own-workflow.yml  
