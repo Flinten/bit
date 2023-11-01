@@ -37,7 +37,6 @@ jobs:
           bit status --strict
           bit lane create pr-2
           bit snap -m first try --build
-#          bit lane switch main
           bit export
           bit lane remove flinten.latest/pr-2 --remote --silent --force
       - name: Bit Tag and Export
