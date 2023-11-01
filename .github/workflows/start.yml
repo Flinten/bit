@@ -14,11 +14,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Get Pull Request Number
-        id: pr
-        run: echo "::set-output name=pull_request_number::$(gh pr view --json number -q .number || echo "")"
+      - name: Read the PR number
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          PR_NUMBER: ${{ github.event.number }}
+        run: |
+          echo "From Bash: ${PR_NUMBER}"
+          node -e "console.log('From Node:', process.env.PR_NUMBER);" 
   Bit-init:
     uses: ./.github/workflows/bit-init.yml  
     secrets:
