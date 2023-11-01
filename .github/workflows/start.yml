@@ -16,14 +16,14 @@ jobs:
     uses: ./.github/workflows/verify.yml  
     secrets:
       BIT_CONFIG_USER_TOKEN: ${{ secrets.BIT_CONFIG_USER_TOKEN }}        
-  Bit-pull-request:
+#  Bit-pull-request:
+#    needs: Bit-verify  
+#    uses: ./.github/workflows/pull-request.yml  
+#    secrets:
+#      BIT_CONFIG_USER_TOKEN: ${{ secrets.BIT_CONFIG_USER_TOKEN }}  
+  Own-pull-request:
     needs: Bit-verify  
-    uses: ./.github/workflows/pull-request.yml  
+    uses: ./.github/workflows/own-workflow.yml  
     secrets:
       BIT_CONFIG_USER_TOKEN: ${{ secrets.BIT_CONFIG_USER_TOKEN }}  
-#    Own-pull-request:
-#      needs: Bit-verify  
-#      uses: ./.github/workflows/own-workflow.yml  
-#      secrets:
-#        BIT_CONFIG_USER_TOKEN: ${{ secrets.BIT_CONFIG_USER_TOKEN }}  
 
