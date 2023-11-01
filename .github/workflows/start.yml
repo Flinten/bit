@@ -14,12 +14,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Read the PR number
-        env:
-          PR_NUMBER: ${{ github.event.number }}
-        run: |
-          echo "From Bash: ${PR_NUMBER}"
-          node -e "console.log('From Node:', process.env.PR_NUMBER);" 
+      - name: pr-number-action
+        id: pr-numb
+        uses: kkak10/pr-number-action@v1.3
+      - name: print-pr
+        run: echo ${{steps.pr-numb.outputs.pr}}   
   Bit-init:
     uses: ./.github/workflows/bit-init.yml  
     secrets:
