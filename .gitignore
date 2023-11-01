@@ -106,3 +106,4 @@ dist
 .tern-port
 
 .history
+node_modules
