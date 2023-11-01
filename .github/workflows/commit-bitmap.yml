@@ -5,6 +5,10 @@ on:
     secrets:
       BIT_CONFIG_USER_TOKEN:
         required: true
+      GIT_USER_NAME:
+        required: true 
+      GIT_USER_EMAIL:
+        required: true  
 jobs:
   release:
     runs-on: ubuntu-latest
