@@ -73,12 +73,12 @@ importers:
 
   node_modules/.bit_roots/teambit.react_react-env@1.0.16:
     dependencies:
+      '@flinten/latest.ui.button':
+        specifier: workspace:*
+        version: file:my-scope/ui/button(react@18.2.0)
       '@mdx-js/react':
         specifier: 1.6.22
         version: 1.6.22(react@18.2.0)
-      '@my-scope/ui.button':
-        specifier: workspace:*
-        version: file:my-scope/ui/button(react@18.2.0)
       '@teambit/mdx.ui.mdx-scope-context':
         specifier: 1.0.0
         version: 1.0.0(react-dom@18.2.0)(react@18.2.0)
@@ -98,7 +98,7 @@ importers:
         specifier: ^18.0.0
         version: 18.2.0(react@18.2.0)
     dependenciesMeta:
-      '@my-scope/ui.button':
+      '@flinten/latest.ui.button':
         injected: true
 
 packages:
@@ -17594,7 +17594,7 @@ packages:
   file:my-scope/ui/button(react@18.2.0):
     resolution: {directory: my-scope/ui/button, type: directory}
     id: file:my-scope/ui/button
-    name: '@my-scope/ui.button'
+    name: '@flinten/latest.ui.button'
     peerDependencies:
       react: '*'
     peerDependenciesMeta:
