@@ -22,7 +22,7 @@ jobs:
 #    secrets:
 #      BIT_CONFIG_USER_TOKEN: ${{ secrets.BIT_CONFIG_USER_TOKEN }}  
   Own-pull-request:
-    needs: Bit-verify  
+    needs: Bit-init  
     uses: ./.github/workflows/own-workflow.yml  
     secrets:
       BIT_CONFIG_USER_TOKEN: ${{ secrets.BIT_CONFIG_USER_TOKEN }}  
