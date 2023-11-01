@@ -12,9 +12,11 @@ jobs:
       BIT_CONFIG_USER_TOKEN: ${{ secrets.BIT_CONFIG_USER_TOKEN }}
       PR_NUMBER: ${{ github.event.number }}
     steps:
-      - name: get-pr
-        run: |
-          echo "$GITHUB_PR_NUMBER"  
+      - name: Get Pull Request Number
+        id: pr
+        run: echo "::set-output name=pull_request_number::$(gh pr view --json number -q .number || echo "")"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
   Bit-init:
     uses: ./.github/workflows/bit-init.yml  
     secrets:
