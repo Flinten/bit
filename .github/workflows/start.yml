@@ -3,22 +3,10 @@ on:
   workflow_dispatch
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      GIT_USER_NAME: ${{ secrets.GIT_USER_NAME }}
-      GIT_USER_EMAIL: ${{ secrets.GIT_USER_EMAIL }}
-      BIT_CONFIG_USER_TOKEN: ${{ secrets.BIT_CONFIG_USER_TOKEN }}
-      PR_NUMBER: ${{ github.event.number }}
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: pr-number-action
-        id: pr-numb
-        uses: kkak10/pr-number-action@v1.3
-      - name: print-pr
-        run: echo ${{steps.pr-numb.outputs.pr}}   
+  Upload-pr-number:
+    uses: ./.github/workflows/upload.yml
+  Use--pr-number:
+    uses: ./.github/workflows/use-data.yml    
   Bit-init:
     uses: ./.github/workflows/bit-init.yml  
     secrets:
