@@ -1,6 +1,6 @@
 name: Bit Init
 on:
-  push
+  workflow_dispatch
 
 jobs:
   build:
