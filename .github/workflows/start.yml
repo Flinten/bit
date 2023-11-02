@@ -3,10 +3,10 @@ on:
   pull_request
 
 jobs:
-  Upload-pr-number:
-    uses: ./.github/workflows/upload.yml
-  Use--pr-number:
-    uses: ./.github/workflows/use-data.yml    
+#  Upload-pr-number:
+#    uses: ./.github/workflows/upload.yml
+#  Use--pr-number:
+#    uses: ./.github/workflows/use-data.yml    
   Bit-init:
     uses: ./.github/workflows/bit-init.yml  
     secrets:
