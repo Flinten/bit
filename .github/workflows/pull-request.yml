@@ -21,9 +21,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Initialize Bit
-        uses: bit-tasks/init@v1
-      - name: Print event
-        run: |
-          echo "$GITHUB_PR_NUMBER"         
+        uses: bit-tasks/init@v1      
       - name: Bit Pull Request
         uses: bit-tasks/pull-request@v1
