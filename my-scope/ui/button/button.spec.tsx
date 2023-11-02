@@ -4,6 +4,6 @@ import { BasicButton } from './button.composition';
 
 it('renders with the correct text', () => {
   const { getByText } = render(<BasicButton />);
-  const rendered = getByText('strong');
+  const rendered = getByText('dude');
   expect(rendered).toBeTruthy();
 });

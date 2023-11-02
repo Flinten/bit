@@ -26,3 +26,5 @@ jobs:
         uses: bit-tasks/tag-export@v1
       - name: Commit Bitmap
         uses: bit-tasks/commit-bitmap@v1
+      - name: Bit Lane Cleanup
+        uses: bit-tasks/lane-cleanup@v1  
