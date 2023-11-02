@@ -12,15 +12,9 @@
     "ui/button": {
         "name": "ui/button",
         "scope": "flinten.latest",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
-        "rootDir": "my-scope/ui/button",
-        "config": {
-            "teambit.react/react-env@1.0.16": {},
-            "teambit.envs/envs": {
-                "env": "teambit.react/react-env"
-            }
-        }
+        "rootDir": "my-scope/ui/button"
     },
     "$schema-version": "17.0.0"
 }
