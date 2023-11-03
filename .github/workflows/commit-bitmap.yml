@@ -20,9 +20,9 @@ jobs:
         uses: bit-tasks/init@v1
       - name: Bit Tag and Export
         run: | 
-          bit tag -m "removed pr workflow" --build --unmodified
+          bit tag -m "removed pr workflow" --build
           bit export
       - name: Commit Bitmap
         uses: bit-tasks/commit-bitmap@v1
-#      - name: Bit Lane Cleanup
-#        uses: bit-tasks/lane-cleanup@v1  
+      - name: Bit Lane Cleanup
+        uses: bit-tasks/lane-cleanup@v1  
