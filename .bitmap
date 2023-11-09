@@ -11,9 +11,8 @@
 {
     "abg-component-template": {
         "name": "abg-component-template",
-        "scope": "",
-        "version": "",
-        "defaultScope": "flinten.latest",
+        "scope": "flinten.latest",
+        "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "my-scope/generators/abg-component-template"
     },
