@@ -9,6 +9,14 @@
  */
 
 {
+    "abg-component-template": {
+        "name": "abg-component-template",
+        "scope": "",
+        "version": "",
+        "defaultScope": "flinten.latest",
+        "mainFile": "index.ts",
+        "rootDir": "my-scope/generators/abg-component-template"
+    },
     "ui/button": {
         "name": "ui/button",
         "scope": "flinten.latest",
