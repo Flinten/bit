@@ -19,7 +19,7 @@
     "ui/button": {
         "name": "ui/button",
         "scope": "flinten.latest",
-        "version": "0.0.4",
+        "version": "0.0.5",
         "mainFile": "index.ts",
         "rootDir": "my-scope/ui/button"
     },

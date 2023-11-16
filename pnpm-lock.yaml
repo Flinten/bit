@@ -8,9 +8,24 @@ importers:
 
   .:
     dependencies:
+      '@mdx-js/react':
+        specifier: 1.6.22
+        version: 1.6.22(react@18.2.0)
+      '@teambit/mdx.ui.mdx-scope-context':
+        specifier: 1.0.0
+        version: 1.0.0(react-dom@18.2.0)(react@18.2.0)
+      graphql:
+        specifier: 15.8.0
+        version: 15.8.0
+      jest:
+        specifier: 29.3.1
+        version: 29.3.1(@types/node@12.20.4)
       react:
-        specifier: ^17.0.0 || ^18.0.0
+        specifier: '>=18.0.0 <19.0.0'
         version: 18.2.0
+      react-dom:
+        specifier: ^18.0.0
+        version: 18.2.0(react@18.2.0)
     devDependencies:
       '@babel/runtime':
         specifier: 7.20.0
@@ -96,7 +111,7 @@ importers:
         version: file:my-scope/generators/abg-component-template
       '@flinten/latest.ui.button':
         specifier: workspace:*
-        version: file:my-scope/ui/button(react@18.2.0)
+        version: file:my-scope/ui/button(@types/node@12.20.4)
     dependenciesMeta:
       '@flinten/latest.abg-component-template':
         injected: true
@@ -110,7 +125,7 @@ importers:
         version: file:my-scope/generators/abg-component-template
       '@flinten/latest.ui.button':
         specifier: workspace:*
-        version: file:my-scope/ui/button(react@18.2.0)
+        version: file:my-scope/ui/button(@types/node@12.20.4)
       '@mdx-js/react':
         specifier: 1.6.22
         version: 1.6.22(react@18.2.0)
@@ -17681,15 +17696,24 @@ packages:
     name: '@flinten/latest.abg-component-template'
     dev: false
 
-  file:my-scope/ui/button(react@18.2.0):
+  file:my-scope/ui/button(@types/node@12.20.4):
     resolution: {directory: my-scope/ui/button, type: directory}
     id: file:my-scope/ui/button
     name: '@flinten/latest.ui.button'
-    peerDependencies:
-      react: '*'
     peerDependenciesMeta:
       react:
         optional: true
     dependencies:
+      '@mdx-js/react': 1.6.22(react@18.2.0)
+      '@teambit/mdx.ui.mdx-scope-context': 1.0.0(react-dom@18.2.0)(react@18.2.0)
+      graphql: 15.8.0
+      jest: 29.3.1(@types/node@12.20.4)
       react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - '@types/node'
+      - babel-plugin-macros
+      - node-notifier
+      - supports-color
+      - ts-node
     dev: false
